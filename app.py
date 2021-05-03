@@ -1,8 +1,7 @@
-import threading
-import requests
-import socket
 import gui
-from vidstream import AudioSender, AudioReceiver, ScreenShareClient, CameraClient, StreamingServer
+import streaming
 
-local_ip_address = socket.gethostbyname(socket.gethostname())
-server = StreamingServer(local_ip_address, 9999)
+gui.init(streaming.start_listening,
+         streaming.start_camera_steam,
+         streaming.start_screen_sharing,
+         streaming.start_audio_stream)

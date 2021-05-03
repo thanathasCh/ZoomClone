@@ -1,27 +1,27 @@
 import tkinter as tk
 
-window = tk.Tk()
-window.title('Zoom Clone Program')
-window.geometry('300x200')
 
-label_target_ip = tk.Label(window, text='Target IP:')
-label_target_ip.pack()
+def init(start_listening, start_camera_steam, start_screen_sharing, start_audio_stream):
+    window = tk.Tk()
+    window.title('Zoom Clone Program')
+    window.geometry('300x200')
 
-text_target_ip = tk.Text(window, height=1)
-text_target_ip.pack()
+    label_target_ip = tk.Label(window, text='Target IP:')
+    label_target_ip.pack()
 
-listen_btn = tk.Button(window, text='Start listening', width=50)
-listen_btn.pack(anchor=tk.CENTER, expand=True)
+    text_target_ip = tk.Text(window, height=1)
+    text_target_ip.pack()
 
-camera_btn = tk.Button(window, text='Start camera', width=50)
-camera_btn.pack(anchor=tk.CENTER, expand=True)
+    listen_btn = tk.Button(window, text='Start listening', width=50, command=start_listening)
+    listen_btn.pack(anchor=tk.CENTER, expand=True)
 
-sharing_btn = tk.Button(window, text='Start sharing', width=50)
-sharing_btn.pack(anchor=tk.CENTER, expand=True)
+    camera_btn = tk.Button(window, text='Start camera', width=50, command=start_camera_steam)
+    camera_btn.pack(anchor=tk.CENTER, expand=True)
 
-audio_btn = tk.Button(window, text='Start audio', width=50)
-audio_btn.pack(anchor=tk.CENTER, expand=True)
+    sharing_btn = tk.Button(window, text='Start sharing', width=50, command=start_screen_sharing)
+    sharing_btn.pack(anchor=tk.CENTER, expand=True)
 
+    audio_btn = tk.Button(window, text='Start audio', width=50, command=start_audio_stream)
+    audio_btn.pack(anchor=tk.CENTER, expand=True)
 
-def start():
     window.mainloop()
